@@ -2,32 +2,79 @@
 
 ## 1. Реализация функциональных требований
 
-| Use Case                                   | Domain Entity                           | Application Service / Interface               | Infrastructure Repository                    | Presentation Controller                       |
-|--------------------------------------------|-----------------------------------------|-----------------------------------------------|----------------------------------------------|-----------------------------------------------|
-| Добавить / удалить животное               | `Animal` (Zoo.Domain/Entities/Animal.cs) | `IAnimalRepository` / `AnimalTransferService` | `InMemoryAnimalRepository`                   | `AnimalController` (Zoo.Presentation)         |
-| Добавить / удалить вольер                 | `Enclosure` (Zoo.Domain/Entities/Enclosure.cs) | `IEnclosureRepository`                       | `InMemoryEnclosureRepository`                | `EnclosureController` (Zoo.Presentation)      |
-| Переместить животное между вольерами      | `Animal`, `Enclosure`                   | `IAnimalTransferService` / `AnimalTransferService` | N/A (через репозитории животных и вольеров) | N/A                                           |
-| Просмотреть расписание кормления          | `FeedingSchedule` (Zoo.Domain/Entities/FeedingSchedule.cs) | `IFeedingOrganizationService` / `FeedingOrganizationService` | `InMemoryFeedingScheduleRepository`          | `FeedingScheduleController` (Zoo.Presentation) |
-| Добавить новое кормление в расписание     | `FeedingSchedule`                       | `IFeedingOrganizationService`                | `InMemoryFeedingScheduleRepository`          | `FeedingScheduleController.Schedule()`        |
-| Просмотреть статистику зоопарка           | -                                    | `IZooStatisticsService` / `ZooStatisticsService` | -                                         | (контроллер не реализован, сервис готов)      |
+**Use Cases:**
 
-## 2. Применённые концепции Domain-Driven Design
+1. **Добавить / удалить животное**
+   - **Контроллер**: `AnimalController` (`Create` и `Delete` методы) в проекте **Zoo.Presentation/Controllers**
+   - **Entity**: `Animal` в **Zoo.Domain/Entities/Animal.cs**
+   - **Infrastructure**: `InMemoryAnimalRepository` в **Zoo.Infrastructure/Repositories/InMemoryAnimalRepository.cs**
 
-| Концепция              | Описание                                                             | Класс / Модуль                                     |
-|------------------------|----------------------------------------------------------------------|----------------------------------------------------|
-| **Сущности (Entities)**      | Бизнес‑объекты с уникальным идентификатором и инкапсулированным поведением | `Animal`, `Enclosure`, `FeedingSchedule` (Zoo.Domain/Entities) |
-| **Value Objects**           | Объекты без идентичности, сравнение по значению, неизменяемость       | `Species`, `AnimalName`, `Capacity`, `EnclosureType`, `Gender` (Zoo.Domain/ValueObjects) |
-| **Доменные события**        | Факты предметной области для реактивной обработки                     | `AnimalMovedEvent`, `FeedingTimeEvent` (Zoo.Domain/Events) |
-| **Репозитории (Interfaces)**| Контракты доступа к данным, изоляция доменной логики от хранилища     | `IAnimalRepository`, `IEnclosureRepository`, `IFeedingScheduleRepository`, `IRepository<T>` (Zoo.Application/Interfaces) |
+2. **Добавить / удалить вольер**
+   - **Контроллер**: `EnclosureController` (`Create` и `Delete` методы) в **Zoo.Presentation/Controllers/EnclosureController.cs**
+   - **Entity**: `Enclosure` в **Zoo.Domain/Entities/Enclosure.cs**
+   - **Infrastructure**: `InMemoryEnclosureRepository` в **Zoo.Infrastructure/Repositories/InMemoryEnclosureRepository.cs**
 
-## 3. Применённые принципы Clean Architecture
+3. **Переместить животное между вольерами**
+   - **Сервис**: `AnimalTransferService` (реализация `IAnimalTransferService`) в **Zoo.Application/Services/AnimalTransferService.cs**
+   - **Доменное событие**: `AnimalMovedEvent` в **Zoo.Domain/Events/AnimalMovedEvent.cs**
+   - **Контракт**: `IAnimalTransferService` в **Zoo.Application/Interfaces/IAnimalTransferService.cs**
 
-| Принцип                                 | Описание                                                                                                             | Реализация (Класс / Модуль)                                                   |
-|-----------------------------------------|----------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------|
-| **Dependency Inversion Principle (DIP)** | Зависимость от абстракций (интерфейсов), а не от конкретных реализаций                                               | Регистрация сервисов и репозиториев через интерфейсы в DI контейнере (Startup)  |
-| **Single Responsibility Principle (SRP)**| Каждый класс отвечает только за одну задачу                                                                          | `AnimalTransferService`, `FeedingOrganizationService`, `ZooStatisticsService`  |
-| **Interface Segregation Principle (ISP)**| Специализированные и узконаправленные интерфейсы                                                                      | `IAnimalTransferService`, `IFeedingOrganizationService`, `IZooStatisticsService` |
-| **Изоляция слоёв**                      | Слои зависят только внутрь: Presentation → Application → Domain; Domain не знает о Presentation/Infrastructure            | Настройка ссылок между проектами, отсутствие обратных ссылок                    |
-| **Use Cases / Application Services**    | Явная инкапсуляция бизнес‑логики конкретных сценариев (юзкейсов)                                                     | `AnimalTransferService`, `FeedingOrganizationService`, `ZooStatisticsService`  |
-| **Infrastructure Implementations**      | Отделение технических деталей (хранение, диспатчинг событий) от бизнес‑логики                                          | `InMemory*Repository` (Zoo.Infrastructure/Repositories), `SimpleEventDispatcher` (Zoo.Infrastructure/Events) |
+4. **Просмотреть расписание кормления**
+   - **Сервис**: `FeedingOrganizationService.GetAllSchedules()` (реализация `IFeedingOrganizationService`) в **Zoo.Application/Services/FeedingOrganizationService.cs**
+   - **Контроллер**: `FeedingScheduleController.GetAll()` в **Zoo.Presentation/Controllers/FeedingScheduleController.cs**
+   - **Repository**: `IFeedingScheduleRepository.GetAll()` и `InMemoryFeedingScheduleRepository` в соответствующих папках
+
+5. **Добавить новое кормление в расписание**
+   - **Сервис**: `FeedingOrganizationService.ScheduleFeeding()`
+   - **Контракт**: `IFeedingOrganizationService.ScheduleFeeding()`
+   - **Контроллер**: `FeedingScheduleController.Schedule()`
+   - **Entity**: `FeedingSchedule` в **Zoo.Domain/Entities/FeedingSchedule.cs**
+
+6. **Просмотреть статистику зоопарка (кол‑во животных, свободные вольеры и т.д.)**
+   - **Сервис**: `ZooStatisticsService` (реализация `IZooStatisticsService`) в **Zoo.Application/Services/ZooStatisticsService.cs**
+   - **Контракт**: `IZooStatisticsService` в **Zoo.Application/Interfaces/IZooStatisticsService.cs**
+
+> **Примечание:** Для статистики пока не реализован отдельный контроллер, но сервис и интерфейс доступны для подключения.
+
+## 2. Применённые концепции DDD и принципы Clean Architecture
+
+### Domain-Driven Design
+
+- **Сущности:**
+  - `Animal`, `Enclosure`, `FeedingSchedule` в **Zoo.Domain/Entities** — содержат уникальный `Guid Id` и бизнес‑логику методов (`Feed`, `AddAnimal`, `Reschedule`, `MarkCompleted`).
+
+- **Value Objects:**
+  - `Species`, `AnimalName`, `Capacity`, `EnclosureType`, `Gender` в **Zoo.Domain/ValueObjects** — инкапсулируют примитивы и бизнес‑валидаторы, сравниваются по значению.
+
+- **Доменные события:**
+  - `AnimalMovedEvent`, `FeedingTimeEvent` в **Zoo.Domain/Events** — моделируют факты предметной области, рассылаются через `IEventDispatcher`.
+
+- **Правила и инварианты:**
+  - В методах `Enclosure.AddAnimal` проверка на переполнение (`Capacity.Max`), в `Animal.Feed` — проверка favoriteFood.
+
+- **Репозитории:**
+  - Интерфейсы `IAnimalRepository`, `IEnclosureRepository`, `IFeedingScheduleRepository` в **Zoo.Application/Interfaces** — изолируют доступ к данным.
+
+### Clean Architecture
+
+- **Слои и зависимости:**
+  
+  - **Domain** — ядро, не держит ссылок ни на один внешний слой.
+  - **Application** - опирается только на Domain (для моделей) и задаёт интерфейсы.
+  - **Infrastructure** — реализует эти интерфейсы и при этом тоже зависит от Domain (чтобы работать с сущностями).
+  - **Presentation** (Web API) - инъектит сервисы по интерфейсам из Application; работает с DTO (и в нашем текущем коде чуть-чуть зависит от Domain для Value Objects/Entity в контроллерах, но лучше держать полностью в границах Application–Presentation через DTO).
+
+- **Dependency Inversion Principle:**
+  - Контроллеры и сервисы ссылаются на абстракции (`I*`), а конкретная реализация (`InMemory*`, `SimpleEventDispatcher`) передаётся через DI.
+
+- **Single Responsibility Principle:**
+  - Каждый класс выполняет только одну задачу: `AnimalTransferService` — только перемещения, `FeedingOrganizationService` — только кормления, `ZooStatisticsService` — только статистика.
+
+- **Interface Segregation Principle:**
+  - Интерфейсы небольшие и ориентированы на конкретные сценарии (`IAnimalTransferService`, `IFeedingOrganizationService`, `IZooStatisticsService`).
+
+- **Изоляция бизнес‑логики:**
+  - Domain и Application слои полностью изолированы от технических деталей хранения (Infrastructure) и передачи данных (Presentation).
+
+---
 
