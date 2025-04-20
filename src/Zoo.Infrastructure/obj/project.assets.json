@@ -1,0 +1,111 @@
+{
+  "version": 3,
+  "targets": {
+    "net7.0": {
+      "Zoo.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Zoo.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Zoo.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Zoo.Application.dll": {}
+        }
+      },
+      "Zoo.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Zoo.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Zoo.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Zoo.Application/1.0.0": {
+      "type": "project",
+      "path": "../Zoo.Application/Zoo.Application.csproj",
+      "msbuildProject": "../Zoo.Application/Zoo.Application.csproj"
+    },
+    "Zoo.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Zoo.Domain/Zoo.Domain.csproj",
+      "msbuildProject": "../Zoo.Domain/Zoo.Domain.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net7.0": [
+      "Zoo.Application >= 1.0.0",
+      "Zoo.Domain >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/Users/dmitrypeschansky/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/dmitrypeschansky/Projects/MINI_HW_2/src/Zoo.Infrastructure/Zoo.Infrastructure.csproj",
+      "projectName": "Zoo.Infrastructure",
+      "projectPath": "/Users/dmitrypeschansky/Projects/MINI_HW_2/src/Zoo.Infrastructure/Zoo.Infrastructure.csproj",
+      "packagesPath": "/Users/dmitrypeschansky/.nuget/packages/",
+      "outputPath": "/Users/dmitrypeschansky/Projects/MINI_HW_2/src/Zoo.Infrastructure/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/dmitrypeschansky/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net7.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "projectReferences": {
+            "/Users/dmitrypeschansky/Projects/MINI_HW_2/src/Zoo.Application/Zoo.Application.csproj": {
+              "projectPath": "/Users/dmitrypeschansky/Projects/MINI_HW_2/src/Zoo.Application/Zoo.Application.csproj"
+            },
+            "/Users/dmitrypeschansky/Projects/MINI_HW_2/src/Zoo.Domain/Zoo.Domain.csproj": {
+              "projectPath": "/Users/dmitrypeschansky/Projects/MINI_HW_2/src/Zoo.Domain/Zoo.Domain.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net7.0": {
+        "targetAlias": "net7.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.317/RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+/Users/dmitrypeschansky/Projects/MINI_HW_2/src/Zoo.Domain/bin/Debug/net7.0/Zoo.Domain.deps.json
+/Users/dmitrypeschansky/Projects/MINI_HW_2/src/Zoo.Domain/bin/Debug/net7.0/Zoo.Domain.dll
+/Users/dmitrypeschansky/Projects/MINI_HW_2/src/Zoo.Domain/bin/Debug/net7.0/Zoo.Domain.pdb
+/Users/dmitrypeschansky/Projects/MINI_HW_2/src/Zoo.Domain/obj/Debug/net7.0/Zoo.Domain.csproj.AssemblyReference.cache
+/Users/dmitrypeschansky/Projects/MINI_HW_2/src/Zoo.Domain/obj/Debug/net7.0/Zoo.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/dmitrypeschansky/Projects/MINI_HW_2/src/Zoo.Domain/obj/Debug/net7.0/Zoo.Domain.AssemblyInfoInputs.cache
+/Users/dmitrypeschansky/Projects/MINI_HW_2/src/Zoo.Domain/obj/Debug/net7.0/Zoo.Domain.AssemblyInfo.cs
+/Users/dmitrypeschansky/Projects/MINI_HW_2/src/Zoo.Domain/obj/Debug/net7.0/Zoo.Domain.csproj.CoreCompileInputs.cache
+/Users/dmitrypeschansky/Projects/MINI_HW_2/src/Zoo.Domain/obj/Debug/net7.0/Zoo.Domain.dll
+/Users/dmitrypeschansky/Projects/MINI_HW_2/src/Zoo.Domain/obj/Debug/net7.0/refint/Zoo.Domain.dll
+/Users/dmitrypeschansky/Projects/MINI_HW_2/src/Zoo.Domain/obj/Debug/net7.0/Zoo.Domain.pdb
+/Users/dmitrypeschansky/Projects/MINI_HW_2/src/Zoo.Domain/obj/Debug/net7.0/ref/Zoo.Domain.dll

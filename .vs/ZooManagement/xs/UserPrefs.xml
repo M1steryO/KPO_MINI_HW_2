@@ -1,0 +1,54 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="src/Zoo.Presentation/Controllers/FeedingScheduleController.cs">
+    <Files>
+      <File FileName="Domain/Entities/Animal.cs" />
+      <File FileName="Domain/Entities/Enclosure.cs" />
+      <File FileName="Domain/Entities/FeedingSchedule.cs" />
+      <File FileName="Domain/ValueObjects/Species.cs" />
+      <File FileName="Domain/ValueObjects/AnimalName.cs" />
+      <File FileName="Domain/ValueObjects/Gender.cs" />
+      <File FileName="Domain/ValueObjects/EnclosureType.cs" />
+      <File FileName="Domain/ValueObjects/Capacity.cs" />
+      <File FileName="Domain/Events/AnimalMovedEvent.cs" />
+      <File FileName="Domain/Events/FeedingTimeEvent.cs" />
+      <File FileName="Zoo.Application/Services/AnimalTransferService.cs" />
+      <File FileName="Zoo.Application/Services/FeedingOrganizationService.cs" />
+      <File FileName="Zoo.Application/Services/ZooStatisticsService.cs" />
+      <File FileName="Zoo.Infrastructure/Events/SimpleEventDispatcher.cs" />
+      <File FileName="Zoo.Infrastructure/Repositories/InMemoryAnimalRepository.cs" />
+      <File FileName="Zoo.Infrastructure/Repositories/InMemoryEnclosureRepository.cs" />
+      <File FileName="Zoo.Infrastructure/Repositories/InMemoryFeedingScheduleRepository.cs" />
+      <File FileName="Zoo.Presentation/Controllers/AnimalController.cs" />
+      <File FileName="Zoo.Presentation/Controllers/EnclosureController.cs" />
+      <File FileName="Zoo.Presentation/Controllers/FeedingScheduleController.cs" Line="19" Column="10" />
+      <File FileName="Zoo.Application/Interfaces/Services/IAnimalTransferService.cs" />
+      <File FileName="Zoo.Application/Interfaces/Services/IFeedingOrganizationService.cs" />
+      <File FileName="Zoo.Application/Interfaces/Services/IZooStatisticsService.cs" />
+      <File FileName="Zoo.Presentation/DTO/AnimalDto.cs" />
+      <File FileName="Zoo.Presentation/DTO/CreateAnimalDto.cs" />
+      <File FileName="Zoo.Presentation/DTO/EnclosureDto.cs" />
+      <File FileName="Zoo.Presentation/DTO/CreateEnclosureDto.cs" />
+      <File FileName="Zoo.Presentation/DTO/FeedingScheduleDto.cs" />
+      <File FileName="Zoo.Presentation/DTO/ScheduleFeedingDto.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ZooManagement" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>Zoo.Application/Zoo.Application.csproj</String>
+    <String>Domain/Zoo.Domain.csproj</String>
+    <String>Zoo.Infrastructure/Zoo.Infrastructure.csproj</String>
+    <String>Zoo.Presentation/Zoo.Presentation.csproj</String>
+  </DisabledProjects>
+  <MultiItemStartupConfigurations />
+</Properties>

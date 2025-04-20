@@ -1,0 +1,26 @@
+﻿<Properties>
+  <MonoDevelop.Ide.ItemProperties.Zoo.Tests FirstBuild="True" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../usr/local/share/dotnet/sdk/7.0.317/Microsoft.Common.CurrentVersion.targets">
+    <Files>
+      <File FileName="Zoo.Infrastructure/Repositories/InMemoryAnimalRepository.cs" Line="2" Column="7" />
+      <File FileName="Zoo.Domain/Entities/Animal.cs" Line="2" Column="13" />
+      <File FileName="Zoo.Domain/Entities/Enclosure.cs" Line="1" Column="1" />
+      <File FileName="Zoo.Domain/Entities/FeedingSchedule.cs" Line="1" Column="1" />
+      <File FileName="Zoo.Domain/Events/AnimalMovedEvent.cs" Line="1" Column="1" />
+      <File FileName="Zoo.Domain/Events/FeedingTimeEvent.cs" Line="1" Column="1" />
+      <File FileName="Zoo.Domain/ValueObjects/AnimalName.cs" Line="1" Column="1" />
+      <File FileName="../../../../../usr/local/share/dotnet/sdk/7.0.317/Microsoft.Common.CurrentVersion.targets" Line="2116" Column="5" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ZooManagement" expanded="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
