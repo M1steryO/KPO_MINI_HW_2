@@ -1,26 +1,29 @@
-﻿<Properties>
-  <MonoDevelop.Ide.ItemProperties.Zoo.Tests FirstBuild="True" />
+﻿<Properties StartupConfiguration="{FE2B1805-6F2D-4C66-961A-BAFA0AD2F296}|https">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../usr/local/share/dotnet/sdk/7.0.317/Microsoft.Common.CurrentVersion.targets">
+  <MonoDevelop.Ide.ItemProperties.Zoo.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Zoo.Presentation FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Zoo.Presentation/Program.cs">
     <Files>
-      <File FileName="Zoo.Infrastructure/Repositories/InMemoryAnimalRepository.cs" Line="2" Column="7" />
-      <File FileName="Zoo.Domain/Entities/Animal.cs" Line="2" Column="13" />
-      <File FileName="Zoo.Domain/Entities/Enclosure.cs" Line="1" Column="1" />
-      <File FileName="Zoo.Domain/Entities/FeedingSchedule.cs" Line="1" Column="1" />
-      <File FileName="Zoo.Domain/Events/AnimalMovedEvent.cs" Line="1" Column="1" />
-      <File FileName="Zoo.Domain/Events/FeedingTimeEvent.cs" Line="1" Column="1" />
-      <File FileName="Zoo.Domain/ValueObjects/AnimalName.cs" Line="1" Column="1" />
-      <File FileName="../../../../../usr/local/share/dotnet/sdk/7.0.317/Microsoft.Common.CurrentVersion.targets" Line="2116" Column="5" />
+      <File FileName="Zoo.Presentation/Program.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="ZooManagement" expanded="True" />
+          <Node name="ZooManagement" expanded="True">
+            <Node name="Zoo.Presentation" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="ZooManagement" selected="True" />
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
 </Properties>
